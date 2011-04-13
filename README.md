@@ -1,7 +1,7 @@
 Welcome
 =======
 
-A small Clojure library that makes writing XML schemas slight more bearable.
+A small Clojure library that makes writing XML schemas slightly more bearable.
 
 Usage
 -----
@@ -9,6 +9,7 @@ Welcome adds several new tags to [prxml](http://richhickey.github.com/clojure-co
 A good explanation of prxml can be found [here](http://nakkaya.com/2009/10/10/processing-xml-with-clojure/). 
 
 The new tags available through Welcome are:
+
 * :ordered-list! -- requires an element to contain an ordered list of elements
 * :unordered-list! -- requires an element to contain a unordered list of elements
 * :choice! -- requires an element to contain one element from a list of elements
@@ -19,6 +20,7 @@ Example
 -------
 
 Suppose we want to validate the following:
+
     <own3dReply>
       <liveEvent>
         <isLive>false</isLive>
@@ -39,6 +41,7 @@ We would write the following code:
     (schema xsd "xs")
 
 It would produce the following schema:
+
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="own3dReply">
         <xs:complexType>
