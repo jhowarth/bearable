@@ -19,10 +19,9 @@
                    [(add-xmlns tag) attrs
                      contents]]]))
 
-(defmethod print-xml-tag :ordered-list!
+(defmethod print-xml-tag :ordered-list! [tag attrs contents]
   "Prints an element that permits only the child elements to appear in a specific order.
   See: http://www.w3schools.com/schema/el_sequence.asp"
-  [tag attrs contents]
   (print-xml (wrap-seq :sequence attrs contents)))
 
 (defmethod print-xml-tag :unordered-list! [tag attrs contents]
