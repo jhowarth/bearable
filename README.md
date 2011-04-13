@@ -30,7 +30,7 @@ Suppose we want to validate the following:
 
 We would write the following code:
     
-    (use 'welcoma.schema)
+    (use 'welcome.schema)
 
     (def xsd 
      [:xs:schema {:xmlns:xs "http://www.w3.org/2001/XMLSchema"}
