@@ -38,7 +38,8 @@ We would write the following code:
          [:ordered-list! {:name "liveEvent"}
            [:restricted! {:name "isLive" :base "xs:string"} [:xs:pattern {:value "true|false"}]]
            [:xs:element {:name "liveViewers" :type "xs:integer"}]]]])
-    (schema xsd "xs")
+
+    (schema xsd "xs" 2)
 
 It would produce the following schema:
 
