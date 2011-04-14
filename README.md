@@ -11,7 +11,7 @@ A good explanation of prxml can be found [here](http://nakkaya.com/2009/10/10/pr
 The new tags available through Welcome are:
 
 * :ordered-list! -- requires an element to contain an ordered list of elements
-* :unordered-list! -- requires an element to contain a unordered list of elements
+* :unordered-list! -- requires an element to contain an unordered list of elements
 * :choice! -- requires an element to contain one element from a list of elements
 * :restricted! -- requires an elements to meet certain restrictions
 
