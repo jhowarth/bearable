@@ -66,6 +66,13 @@ It would produce the following schema:
       </xs:element>
     </xs:schema>
 
+Installation
+-------
+
+To use Bearable in your project add the following dependency to your project.clj file:
+
+    [bearable "0.0.1"]
+
 
 License
 -------
