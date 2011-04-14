@@ -20,4 +20,4 @@
 
 (deftest restricted-complex
   (is (= "<xs:element name=\"restricted\"><xs:complexType><xs:restriction base=\"xs:string\"><content/></xs:restriction></xs:complexType></xs:element>"
-         (schema [:restricted! {:name "restricted" :base "xs:string" :type "xs:complexType"} [:content]] "xs"))))
+         (schema [:restricted! {:name "restricted" :base "xs:string" :type ":complexType"} [:content]] "xs"))))

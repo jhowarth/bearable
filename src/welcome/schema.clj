@@ -10,14 +10,14 @@
 
 (defn wrap-seq
   "Returns a vector with contents wrapped in an element
-  of complexType with tag tag."
-  [tag attrs contents]
-  (let [name (:name attrs)
-        attrs (dissoc attrs :name)]
-    [(add-xmlns :element) {:name name}
-                 [(add-xmlns :complexType)
-                   [(add-xmlns tag) attrs
-                     contents]]]))
+  of type element-type with tag tag."
+  ([tag attrs contents] (wrap-seq tag attrs contents :complexType))
+  ([tag attrs contents element-type]
+    (let [name (:name attrs)
+          attrs (dissoc attrs :name)]
+      [(add-xmlns :element) {:name name}
+                   [(add-xmlns element-type)
+                     [(add-xmlns tag) attrs contents]]])))
 
 (defmethod print-xml-tag :ordered-list! [tag attrs contents]
   "Prints an element that permits only the child elements to appear in a specific order.
@@ -37,15 +37,9 @@
 (defmethod print-xml-tag :restricted! [tag attrs contents]
   "Prints an element that permits only certain content to appear inside tags.
   See: http://www.w3schools.com/schema/el_restriction.asp"
-  (let [element-type (if (:type attrs)
-                       (:type attrs)
-                       (add-xmlns :simpleType))
-        name (:name attrs)
-        attrs (dissoc attrs :name :type)]
-    (print-xml [(add-xmlns :element) {:name name}
-                 [element-type
-                   [(add-xmlns :restriction) {:base (:base attrs)}
-                     contents]]])))
+  (let [element-type (if (:type attrs) (:type attrs) :simpleType)
+        attrs (dissoc attrs :type)]
+    (print-xml (wrap-seq :restriction attrs contents element-type))))
 
 (defn schema
  "Prints an XML schema based on xml with xmlns as the namespace used for schema tags."
