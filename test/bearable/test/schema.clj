@@ -1,5 +1,5 @@
-(ns welcome.test.schema
-  (:use [welcome.schema] :reload)
+(ns bearable.test.schema
+  (:use [bearable.schema] :reload)
   (:use [clojure.test]))
 
 (deftest ordered-list

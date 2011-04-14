@@ -1,4 +1,4 @@
-(ns welcome.schema
+(ns bearable.schema
  (:use [clojure.contrib.prxml]))
 
 (def *xmlns* nil)

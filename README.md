@@ -1,14 +1,14 @@
-Welcome
+Bearable
 =======
 
 A small Clojure library that makes writing XML schemas slightly more bearable.
 
 Usage
 -----
-Welcome adds several new tags to [prxml](http://richhickey.github.com/clojure-contrib/prxml-api.html).
+Bearable adds several new tags to [prxml](http://richhickey.github.com/clojure-contrib/prxml-api.html).
 A good explanation of prxml can be found [here](http://nakkaya.com/2009/10/10/processing-xml-with-clojure/). 
 
-The new tags available through Welcome are:
+The new tags available through Bearable are:
 
 * :ordered-list! -- requires an element to contain an ordered list of elements
 * :unordered-list! -- requires an element to contain an unordered list of elements
@@ -30,7 +30,7 @@ Suppose we want to validate the following:
 
 We would write the following code:
     
-    (use 'welcome.schema)
+    (use 'bearable.schema)
 
     (def xsd 
      [:xs:schema {:xmlns:xs "http://www.w3.org/2001/XMLSchema"}
